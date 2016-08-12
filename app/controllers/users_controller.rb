@@ -5,6 +5,8 @@ get '/users/new' do
 end
 
 get '/users/:id' do
+  user = User.find(session[:id])
+  @questions = user.questions
   erb :'/users/show'
 end
 

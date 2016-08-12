@@ -1,1 +1,15 @@
 <h1>User's profile page</h1>
+<% if @questions %>
+	<ul>
+	<% @questions.each do |question| %>
+		<li><%= question.content  %></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<form action="/questions/new" method="post">
+	<label>Post question:</label>
+	<input type="text" name="content">
+	<input type="submit" value="Submit it">
+
+</form>
