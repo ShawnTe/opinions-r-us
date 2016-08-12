@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -20,6 +20,13 @@
 <body>
   <nav>
       <ul>
+        <li><div class="navbar">
+          <form action="/search" method="get">
+             <input type="text" name="query" placeholder="Search">
+             <input type="submit">
+          </form>
+        </div>
+      </li>
         <li><a href="/">Home</a></li>
 
         <% if current_user %>
