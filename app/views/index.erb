@@ -5,7 +5,9 @@
 <div id='question-list'>
   <% @questions.each do |question| %>
     <div class="questy" id="question<%=question.id%>">
-     <h3><a href="/questions/<%=question.id%>"><%= question.content %></a></h3>
+     <h3><a href="/questions/<%=question.id%>"><%= question.content %></a>
+     <br>- posted by: <a href='/users/<%= question.author_id %>'><%= question.user.name %></a>
+     at: <%= question.created_at %></h3>
     </div>
   <% end %>
 </div>
