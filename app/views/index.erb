@@ -1,4 +1,14 @@
-<br>
-<h1>Welcome to Opinions-R-Us.</h1>
+
+<h1>Mighty Polymorphy Ranger Flow</h1>
 
 <h4>We need a new name</h4>
+
+<div id='question-list'>
+  <% @questions.each do |question| %>
+    <div class="questy" id="question<%=question.id%>">
+     <h3><a href="/questions/<%=question.id%>"><%= question.content %></a>
+     <br>- posted by: <a href='/users/<%= question.user_id %>'><%= question.user.name %></a>
+     at: <%= question.created_at %></h3>
+    </div>
+  <% end %>
+</div>
