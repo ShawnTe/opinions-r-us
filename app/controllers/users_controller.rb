@@ -5,7 +5,7 @@ get '/users/new' do
 end
 
 get '/users/:id' do
-  user = User.find(session[:id])
+  user = User.find(params[:id])
   @questions = user.questions
   erb :'/users/show'
 end
@@ -21,5 +21,5 @@ post '/users' do
         @error
         erb :'users/new'
       end
-    
+
 end
